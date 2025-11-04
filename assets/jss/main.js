@@ -22,7 +22,7 @@ async function loadSection(sectionId) {
         // Add specific ministry pages for dynamic loading
         'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',
         // Add general ministry pages for dynamic loading
-        'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'
+        'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats'
     ];
     if (!validSections.includes(sectionId)) {
         console.warn(`Attempted to load invalid section: ${sectionId}. Loading home instead.`);
@@ -93,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 'home', 'nosotros', 'doctrina', 'ministerios',
                 'eventos-noticias', 'recursos', 'medios', 'contacto',
                 'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',
-                'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'
+                'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats'
             ];
 
             if (validSections.includes(targetId)) {
