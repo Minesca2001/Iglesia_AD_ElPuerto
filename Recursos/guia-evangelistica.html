@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fe en Jesucristo</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+.container {
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.hidden {
+    display: none;
+}
+
+.active {
+    display: block;
+}
+
+nav a {
+    text-decoration: none;
+    color: #007BFF;
+    margin: 0 10px;
+    cursor: pointer;
+}
+
+nav a:hover {
+    text-decoration: underline;
+}
+
+form input,
+form textarea,
+form button {
+    width: 50%;
+    padding: 10px;
+    margin: 5px 0 15px;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    align-content: center;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+    </style>
+</head>
+
+<body>
+<span class="menu-button" onclick="abrirMenu()">&#9776;</span>
+
+    <div id="menuLateral" class="sidebar">
+        <a href="javascript:void(0)" class="closebtn" onclick="cerrarMenu()">&times;</a>
+        <a href="Login.html">Login</a>
+        <a href="#inicio">Inicio</a>
+        <a href="Doctrinas.html">Doctrinas Fundamentales</a>
+
+    </div>
+    <div class="container">
+        <h1>Una guía para evangelizar</h1>
+        <p><em>Una guía para la presentación del evangelio a los que no conocen a Dios.</em></p>
+
+        <!-- Navegación -->
+        <nav>
+            <a href="#DiosteAma" data-target="DiosteAma">Dios te Ama</a> |
+            <a href="#SeparadosdeDios" data-target="SeparadosdeDios">Separados de Dios</a> |
+            <a href="#JesucristoelUnicoCamino" data-target="JesucristoelUnicoCamino">Jesucristo el Único Camino</a> |
+            <a href="#OracionSalvacion" data-target="OracionSalvacion">Oración de Salvación</a>|
+			<a href="#FormularioContacto" data-target="FormularioContacto">Contactanos</a> 
+        </nav>
+
+        <!-- Sección 1 -->
+        <section id="DiosteAma" class="active">
+            <h1>1. ¡Dios Te Ama!</h1>
+            <p>La Biblia dice, <strong><em>"De tal manera amó Dios al mundo, que ha dado a su hijo unigénito, para que todo aquel que en él cree, no se pierda más tenga vida eterna."</em></strong><br><br> El problema es que...</p>
+        </section>
+
+        <!-- Sección 2 -->
+        <section id="SeparadosdeDios" class="hidden">
+            <h1>2. Todos nosotros hemos hecho, dicho o pensado cosas que están mal.</h1>
+            <p>Esto se llama pecado, y nuestro pecado nos ha separado de Dios.</p>
+            <p>La Biblia dice, <strong><em>"Por cuanto todos pecaron y están destituidos de la Gloria de Dios."</em></strong><br> Dios es perfecto y santo, y nuestros pecados nos separan de Dios eternamente.<br><br> La Biblia dice "La paga del pecado es muerte". La buena noticia es que, hace aproximadamente 2000 años...</p>
+        </section>
+
+        <!-- Sección 3 -->
+        <section id="JesucristoelUnicoCamino" class="hidden">
+            <h1>3. Dios envió a Su único hijo Jesucristo a morir por nuestros pecados.</h1>
+            <p>Jesús es el Hijo de Dios, Vivió una vida sin pecado y murió en la cruz para pagar el castigo de nuestros pecados.<br><br> La Biblia dice, <strong><em>"Más Dios muestra su amor para con nosotros, en que siendo aún pecadores, Cristo murió por nosotros."</em></strong> Jesús resucitó de la muerte y ahora vive en el cielo con Dios su Padre. Él nos ofrece el regalo de la <strong><em>Vida Eterna</em></strong> de vivir para siempre con Él en el cielo si le aceptamos como nuestro Señor y Salvador.<br><strong><em><br>Jesús dijo "Yo soy el camino, y la verdad y la vida. Nadie viene al Padre si no es por mi."</em></strong> Dios te quiere acercar a Él con amor y quiere que seas su hijo.</p>
+        </section>
+
+        <!-- Sección 4 -->
+        <section id="OracionSalvacion" class="hidden">
+            <h1>4. Oración de Salvación</h1>
+            <p>Si quieres aceptar a Cristo como tu Salvador y arrepentirte de tus pecados, le puedes pedir que sea tu Salvador y Señor orando una oración como esta:</p>
+            <p><em><strong>Señor Jesús, yo creo que eres el Hijo de Dios. Gracias por morir en la cruz por mis pecados. Te ruego que perdones mis pecados y me des el regalo de la Vida Eterna. Te pido con mi vida y corazón, que seas mi Señor y Salvador.</strong></em></p>
+            <h3><em>Quiere servirte por siempre</em></h3>
+        </section>
+		
+		<!-- Sección 5 - Formulario de Contacto -->
+<section id="FormularioContacto" class="hidden">
+    <h1>5. Contáctanos</h1>
+    <form id="formContacto">
+        <label for="nombre">Nombre completo:</label><br>
+        <input type="text" id="nombre" name="nombre" required><br><br>
+
+        <label for="email">Correo electrónico:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="telefono">Teléfono:</label><br>
+        <input type="tel" id="telefono" name="telefono"><br><br>
+
+        <label for="mensaje">Mensaje o Comentario:</label><br>
+        <textarea id="mensaje" name="mensaje" rows="5" required></textarea><br><br>
+
+        <button type="submit">Enviar</button>
+    </form>
+    <p id="respuestaForm"></p>
+</section>
+
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+	
+	function abrirMenu() {
+            document.getElementById("menuLateral").style.width = "250px";
+            document.querySelector(".main-content").style.marginLeft = "250px";
+        }
+
+        function cerrarMenu() {
+            document.getElementById("menuLateral").style.width = "0";
+            document.querySelector(".main-content").style.marginLeft = "0";
+        }
+        // Seleccionamos los enlaces y las secciones
+        const links = document.querySelectorAll('nav a');
+        const sections = document.querySelectorAll('section');
+
+        // Función para manejar clics en los enlaces
+        links.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+
+                // Identificamos la sección objetivo
+                const targetId = link.getAttribute('data-target');
+                const targetSection = document.getElementById(targetId);
+
+                // Ocultamos todas las secciones
+                sections.forEach(section => {
+                    section.classList.add('hidden');
+                    section.classList.remove('active');
+                });
+
+                // Mostramos la sección seleccionada
+                targetSection.classList.remove('hidden');
+                targetSection.classList.add('active');
+            });
+        });
+		// Manejo del envío del formulario
+document.getElementById('formContacto').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    const form = this;
+    const formData = new FormData(form);
+    const nombre = formData.get('nombre');
+
+    fetch('https://script.google.com/macros/s/AKfycbwFACHNjyNXffH0g0ry1OFzfTm41P0j8aR3smGpZKsg0g2s1-ZvONhi8E-ga-I9lju0/exec', {
+        method: 'POST',
+        body: formData
+    })
+    .then(res => res.text())
+    .then(data => {
+        document.getElementById('respuestaForm').innerText =
+            `Gracias, ${nombre}. Hemos recibido tu mensaje y te contactaremos pronto.`;
+        alert("¡Mensaje enviado con éxito!");
+        form.reset();
+    })
+    .catch(error => {
+        alert("Error al enviar el mensaje.");
+        console.error(error);
+    });
+});
+
+
+    </script>
+</body>
+
+</html>

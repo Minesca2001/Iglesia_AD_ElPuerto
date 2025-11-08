@@ -18,9 +18,9 @@ async function loadSection(sectionId) {
     // Validate sectionId to prevent loading arbitrary files
     const validSections = [
         'home', 'nosotros', 'doctrina', 'ministerios',
-        'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary',
+        'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
         // Add specific ministry pages for dynamic loading
-        'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',
+        'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
         // Add general ministry pages for dynamic loading
         'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'
     ];
@@ -91,8 +91,8 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1);
             const validSections = [
                 'home', 'nosotros', 'doctrina', 'ministerios',
-                'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary',
-                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',
+                'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
+                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',  'adoracion', 'musica',
                 'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats'
             ];
 
