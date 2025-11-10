@@ -1,13 +1,21 @@
 /* Color Palette & Typography Variables */
 :root {
-    --primary-color: #004080; /* Deep Blue */
-    --secondary-color: #F0F4F8; /* Light Grey Blue */
-    --accent-color: #CCA300; /* Gold/Bronze */
-    --text-color: #333333; /* Dark Grey */
-    --light-text-color: #f8f8f8; /* Off-white for dark backgrounds */
-    --border-color: #e0e6ed; /* Lighter border */
-    --shadow-color: rgba(0, 0, 0, 0.08); /* Soft shadow */
-    --hover-link-color: #0066CC; /* Brighter Blue for hover */
+    --primary-color: #004080;
+    /* Deep Blue */
+    --secondary-color: #F0F4F8;
+    /* Light Grey Blue */
+    --accent-color: #CCA300;
+    /* Gold/Bronze */
+    --text-color: #333333;
+    /* Dark Grey */
+    --light-text-color: #f8f8f8;
+    /* Off-white for dark backgrounds */
+    --border-color: #e0e6ed;
+    /* Lighter border */
+    --shadow-color: rgba(0, 0, 0, 0.08);
+    /* Soft shadow */
+    --hover-link-color: #0066CC;
+    /* Brighter Blue for hover */
 
     --font-heading: Montserrat, 'Times New Roman', sans-serif;
     --font-body: Times New Roman, Open Sans, 'Times New Roman', sans-serif;
@@ -20,7 +28,8 @@ body {
     background-color: var(--shadow-color);
     color: var(--text-color);
     line-height: 1.6;
-    scroll-behavior: smooth; /* Smooth scrolling for anchor links */
+    scroll-behavior: smooth;
+    /* Smooth scrolling for anchor links */
 }
 
 /* Scroll lock for mobile nav */
@@ -68,7 +77,8 @@ a:hover {
 .primary-btn:hover {
     background-color: var(--hover-link-color);
     transform: translateY(-2px);
-    color: white; /* Keep text white on hover */
+    color: white;
+    /* Keep text white on hover */
     text-decoration: none;
 }
 
@@ -76,7 +86,8 @@ a:hover {
     background-color: transparent;
     color: var(--primary-color);
     border: 2px solid var(--primary-color);
-    padding: 10px 23px; /* Adjust padding for border */
+    padding: 10px 23px;
+    /* Adjust padding for border */
 }
 
 .secondary-btn:hover {
@@ -105,7 +116,8 @@ header {
 }
 
 header.sticky {
-    background-color: var(--primary-color); /* Maintain color */
+    background-color: var(--primary-color);
+    /* Maintain color */
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
@@ -113,7 +125,7 @@ header.sticky {
     max-width: 1800px;
     margin: 0 auto;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     align-items: center;
     padding: 0 20px;
 }
@@ -132,9 +144,11 @@ header.sticky {
 }
 
 .logo img {
-    height: 50px; /* Adjust logo size */
+    height: 50px;
+    /* Adjust logo size */
     margin-right: 10px;
-    border-radius: 50%; /* If logo is round */
+    border-radius: 50%;
+    /* If logo is round */
     box-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
 }
 
@@ -149,7 +163,7 @@ nav ul {
     padding: 0;
     list-style: none;
     display: flex;
-    justify-content:flex-end;
+    justify-content: flex-end;
     flex-wrap: wrap;
     margin: 0;
 }
@@ -180,25 +194,29 @@ nav ul li a::after {
 
 nav ul li a:hover,
 nav ul li a:focus,
-nav ul li a.active { /* Added active state */
+nav ul li a.active {
+    /* Added active state */
     color: var(--accent-color);
 }
 
 nav ul li a:hover::after,
 nav ul li a:focus::after,
-nav ul li a.active::after { /* Added active state */
+nav ul li a.active::after {
+    /* Added active state */
     width: 100%;
 }
 
 /* Hamburger menu for mobile */
 .nav-toggle {
-    display: none; /* Hidden by default, shown on mobile */
+    display: none;
+    /* Hidden by default, shown on mobile */
     flex-direction: column;
-    justify-content:space-around;
+    justify-content: space-around;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 1001; /* Above nav menu */
+    z-index: 1001;
+    /* Above nav menu */
 }
 
 .nav-toggle span {
@@ -232,10 +250,12 @@ main {
 }
 
 /* Dynamic content area needs to wrap the actual section for padding/margin consistency */
-#dynamic-content-area > section {
-    margin-bottom: 0; /* Remove bottom margin as content area acts as wrapper */
+#dynamic-content-area>section {
+    margin-bottom: 0;
+    /* Remove bottom margin as content area acts as wrapper */
     padding: 30px;
-    background-color: #fff; /* Ensure section background is white */
+    background-color: #fff;
+    /* Ensure section background is white */
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 2px 10px var(--shadow-color);
@@ -245,7 +265,8 @@ main {
 section {
     margin-bottom: 50px;
     padding: 30px;
-    background-color: #fff; /* Ensure section background is white */
+    background-color: #fff;
+    /* Ensure section background is white */
     border: 1px solid var(--border-color);
     border-radius: 10px;
     box-shadow: 0 2px 10px var(--shadow-color);
@@ -272,8 +293,10 @@ h2::after {
     position: absolute;
     left: 50%;
     transform: translateX(-50%);
-    bottom: -3px; /* Position it below the border */
-    width: 80px; /* Shorter accent line */
+    bottom: -3px;
+    /* Position it below the border */
+    width: 80px;
+    /* Shorter accent line */
     height: 3px;
     background-color: var(--accent-color);
 }
@@ -304,7 +327,8 @@ p {
 }
 
 ul {
-    list-style: none; /* Removed default bullet for cleaner look */
+    list-style: none;
+    /* Removed default bullet for cleaner look */
     padding: 0;
     margin-left: 0;
     margin-bottom: 15px;
@@ -317,7 +341,8 @@ ul li {
 }
 
 ul li::before {
-    content: "\2022"; /* Unicode bullet */
+    content: "\2022";
+    /* Unicode bullet */
     color: var(--accent-color);
     font-weight: bold;
     display: inline-block;
@@ -331,7 +356,8 @@ ul li::before {
 
 /* Intro blocks */
 .intro-block {
-    background-color: white; /* Always white */
+    background-color: white;
+    /* Always white */
     text-align: center;
     padding: 30px;
     border: none;
@@ -364,11 +390,74 @@ ul li::before {
     box-shadow: 0 5px 15px var(--shadow-color);
 }
 
+/* Esta linea de codigo es para prueba de un diseno */
+/* Hero Banner (for Misiones and other main sections) */
+.hero-banner {
+    position: relative;
+    width: 100%;
+    height: 400px;
+    /* Standard height */
+    overflow: hidden;
+    margin-bottom: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px var(--shadow-color);
+}
+
+.hero-banner .hero-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 64, 128, 0.75);
+    /* Darker blue overlay */
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.hero-overlay h2 {
+    font-family: var(--font-heading);
+    color: #fff;
+    font-size: 4em;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
+    line-height: 1.1;
+    border-bottom: none;
+    /* Remove border from H2 in overlay */
+    padding-bottom: 0;
+}
+
+.hero-overlay h2::after {
+    content: none;
+    /* Remove pseudo-element border */
+}
+
+.hero-overlay p {
+    font-family: var(--font-body);
+    font-size: 1.8em;
+    margin: 0;
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
+    max-width: 80%;
+}
+
 /* Banner */
 .banner {
     position: relative;
     width: 100%;
-    height: 450px; /* Increased height for impact */
+    height: 450px;
+    /* Increased height for impact */
     overflow: hidden;
     margin-bottom: 40px;
     border-radius: 10px;
@@ -388,7 +477,8 @@ ul li::before {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 64, 128, 0.75); /* Darker, more professional overlay */
+    background-color: rgba(0, 64, 128, 0.75);
+    /* Darker, more professional overlay */
     color: #fff;
     display: flex;
     flex-direction: column;
@@ -401,18 +491,22 @@ ul li::before {
 .banner-message h3 {
     font-family: var(--font-heading);
     color: #fff;
-    font-size: 4em; /* Larger */
+    font-size: 4em;
+    /* Larger */
     margin-bottom: 15px;
     text-shadow: 2px 2px 6px rgba(0, 0, 0, 0.8);
     line-height: 1.1;
-    border-left: none; /* Remove border from banner H3 */
+    border-left: none;
+    /* Remove border from banner H3 */
     padding-left: 0;
 }
 
 .banner-message p {
     font-family: var(--font-body);
-    font-size: 1.8em; /* Larger */
-    margin: 0 0 25px 0; /* Add margin below paragraph */
+    font-size: 1.8em;
+    /* Larger */
+    margin: 0 0 25px 0;
+    /* Add margin below paragraph */
     text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.8);
     max-width: 80%;
 }
@@ -427,6 +521,19 @@ ul li::before {
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
+/* Esta linea de codigo es para prueba de un diseno */
+#dynamic-content-area>section>.content-block:first-of-type:not(.intro-block) {
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#dynamic-content-area>section>.content-block:last-of-type {
+    margin-bottom: 0;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
 .content-block:last-child {
     margin-bottom: 0;
 }
@@ -435,12 +542,14 @@ ul li::before {
 .news-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 25px; /* Increased gap */
+    gap: 25px;
+    /* Increased gap */
     margin-top: 25px;
 }
 
 .news-item {
-    display: flex; /* Use flexbox for image and content */
+    display: flex;
+    /* Use flexbox for image and content */
     flex-direction: column;
     background-color: white;
     border-radius: 8px;
@@ -448,18 +557,22 @@ ul li::before {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-decoration: none;
     color: var(--text-color);
-    overflow: hidden; /* Hide overflowing image corners */
+    overflow: hidden;
+    /* Hide overflowing image corners */
 }
 
 .news-item:hover {
-    transform: translateY(-8px); /* More pronounced lift */
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15); /* Stronger shadow */
+    transform: translateY(-8px);
+    /* More pronounced lift */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow */
     text-decoration: none;
 }
 
 .news-item img {
     width: 100%;
-    height: 200px; /* Fixed height for consistency */
+    height: 200px;
+    /* Fixed height for consistency */
     object-fit: cover;
     display: block;
     border-bottom: 1px solid var(--border-color);
@@ -469,7 +582,8 @@ ul li::before {
     padding: 20px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* Allow content to take available space */
+    flex-grow: 1;
+    /* Allow content to take available space */
 }
 
 .news-item h4 {
@@ -483,7 +597,8 @@ ul li::before {
 .news-item p {
     font-size: 0.95em;
     margin-bottom: 15px;
-    flex-grow: 1; /* Pushes read-more to bottom */
+    flex-grow: 1;
+    /* Pushes read-more to bottom */
 }
 
 .news-item .read-more {
@@ -491,7 +606,8 @@ ul li::before {
     align-items: center;
     color: var(--accent-color);
     font-weight: 600;
-    margin-top: auto; /* Push to bottom */
+    margin-top: auto;
+    /* Push to bottom */
 }
 
 .news-item .read-more i {
@@ -543,12 +659,15 @@ ul li::before {
 }
 
 .home-ministry-item img {
-    width: 100px; /* Fixed size for summary images */
+    width: 100px;
+    /* Fixed size for summary images */
     height: 100px;
     object-fit: cover;
-    border-radius: 50%; /* Make them round */
+    border-radius: 50%;
+    /* Make them round */
     margin-bottom: 10px;
-    border: 3px solid var(--accent-color); /* Add a border */
+    border: 3px solid var(--accent-color);
+    /* Add a border */
 }
 
 .home-ministry-item h4 {
@@ -563,25 +682,31 @@ ul li::before {
 .footer-social-links .social-icons {
     display: flex;
     justify-content: center;
-    gap: 25px; /* Increased gap */
+    gap: 25px;
+    /* Increased gap */
     margin-top: 20px;
 }
 
 .social-links .social-icons a,
 .footer-social-links .social-icons a {
-    color: var(--primary-color); /* Default color */
-    font-size: 2.2em; /* Larger icons */
+    color: var(--primary-color);
+    /* Default color */
+    font-size: 2.2em;
+    /* Larger icons */
     transition: transform 0.2s ease, color 0.3s ease;
 }
 
 .social-links .social-icons a:hover,
 .footer-social-links .social-icons a:hover {
-    transform: scale(1.3); /* More pronounced scale */
-    color: var(--accent-color); /* Hover color */
+    transform: scale(1.3);
+    /* More pronounced scale */
+    color: var(--accent-color);
+    /* Hover color */
 }
 
 .footer-social-links .social-icons a {
-    color: var(--light-text-color); /* White for footer */
+    color: var(--light-text-color);
+    /* White for footer */
 }
 
 .footer-social-links .social-icons a:hover {
@@ -593,7 +718,8 @@ ul li::before {
     display: flex;
     flex-wrap: wrap;
     /*grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); */
-    gap: 25px; /* Increased gap */
+    gap: 25px;
+    /* Increased gap */
     margin-top: 25px;
 }
 
@@ -602,7 +728,8 @@ ul li::before {
     border: 1px solid var(--border-color);
     border-top: 5px solid var(--accent-color);
     border-radius: 8px;
-    padding: 25px; /* Increased padding */
+    padding: 25px;
+    /* Increased padding */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -616,7 +743,8 @@ ul li::before {
     color: var(--primary-color);
     margin-top: 0;
     font-size: 1.4em;
-    text-align: left; /* Align h4 left */
+    text-align: left;
+    /* Align h4 left */
     display: flex;
     align-items: center;
     gap: 10px;
@@ -637,7 +765,8 @@ ul li::before {
     font-weight: 900;
     color: var(--accent-color);
     display: inline-flex;
-    width: 1.5em; /* Adjust width for icon */
+    width: 1.5em;
+    /* Adjust width for icon */
     margin-left: 0.5em;
     position: absolute;
     left: 0;
@@ -672,7 +801,8 @@ ul li::before {
     object-fit: cover;
     border-radius: 50%;
     margin-bottom: 15px;
-    border: 4px solid var(--primary-color); /* Stronger border for emphasis */
+    border: 4px solid var(--primary-color);
+    /* Stronger border for emphasis */
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
@@ -689,14 +819,30 @@ ul li::before {
     margin-bottom: 0;
 }
 
+.leader-item p.description {
+    /* Style for descriptions under leader names */
+    font-style: italic;
+    font-size: 0.9em;
+    color: #777;
+    margin-top: 10px;
+    flex-grow: 1;
+    /* Pushes content down for consistent height */
+    display: flex;
+    align-items: center;
+    /* Vertically align description if multi-line */
+    justify-content: center;
+}
+
 /* Doctrine Principles Grid */
 .doctrine-principles-grid {
     display: flex;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Increased gap */
+    gap: 25px;
+    /* Increased gap */
     margin-top: 25px;
     flex-wrap: wrap;
-    overflow-x: auto; /* scroll horizontal */
+    overflow-x: auto;
+    /* scroll horizontal */
 }
 
 
@@ -704,7 +850,8 @@ ul li::before {
     background-color: white;
     border: 1px solid var(--border-color);
     border-radius: 8px;
-    padding: 25px; /* Increased padding */
+    padding: 25px;
+    /* Increased padding */
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
@@ -716,9 +863,11 @@ ul li::before {
 }
 
 .doctrine-item .icon {
-    font-size: 3em; /* Larger icons */
+    font-size: 3em;
+    /* Larger icons */
     color: var(--accent-color);
-    margin-bottom: 15px; /* More space */
+    margin-bottom: 15px;
+    /* More space */
 }
 
 .doctrine-item h4 {
@@ -732,7 +881,8 @@ ul li::before {
 .media-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px; /* Increased gap */
+    gap: 25px;
+    /* Increased gap */
     margin-top: 25px;
 }
 
@@ -740,12 +890,14 @@ ul li::before {
 .media-item {
     background-color: white;
     border: 1px solid var(--border-color);
-    border-left: 5px solid var(--primary-color); /* Accent bar */
+    border-left: 5px solid var(--primary-color);
+    /* Accent bar */
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
     text-align: center;
-    display: flex; /* Make it flex to align content better */
+    display: flex;
+    /* Make it flex to align content better */
     flex-direction: column;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
@@ -758,7 +910,8 @@ ul li::before {
 
 .ministry-item img {
     width: 100%;
-    height: 195px; /* Fixed height for consistency */
+    height: 195px;
+    /* Fixed height for consistency */
     object-fit: cover;
     border-radius: 4px;
     margin-bottom: 15px;
@@ -766,7 +919,8 @@ ul li::before {
 
 .ministry-item .icon,
 .media-item .icon {
-    font-size: 2.8em; /* Larger icons */
+    font-size: 2.8em;
+    /* Larger icons */
     color: var(--primary-color);
     margin-bottom: 15px;
 }
@@ -780,19 +934,99 @@ ul li::before {
 }
 
 .ministry-item-content {
-    flex-grow: 1; /* Allow content to push button to bottom */
+    flex-grow: 1;
+    /* Allow content to push button to bottom */
     display: flex;
     flex-direction: column;
     justify-content: space-between;
 }
 
 .ministry-item p {
-    flex-grow: 1; /* Pushes button down */
+    flex-grow: 1;
+    /* Pushes button down */
     margin-bottom: 15px;
 }
 
 .media-item .btn {
-    margin-top: auto; /* Push button to bottom */
+    margin-top: auto;
+    /* Push button to bottom */
+}
+
+/* New: Areas of Focus Grid */
+/* Esta linea de codigo es para prueba de un diseno */
+.areas-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.area-item {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-top: 5px solid var(--primary-color);
+    /* Accent bar for items */
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.area-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.area-item .icon {
+    font-size: 3em;
+    color: var(--accent-color);
+    margin-bottom: 15px;
+}
+
+.area-item h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.3em;
+}
+
+/* New: Involvement Steps Grid */
+.involvement-steps-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin-top: 25px;
+}
+
+.step-item {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-bottom: 5px solid var(--accent-color);
+    /* Accent bar at bottom */
+    border-radius: 8px;
+    padding: 25px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+    text-align: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.step-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.12);
+}
+
+.step-item .icon {
+    font-size: 3.5em;
+    /* Larger icons for steps */
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.step-item h4 {
+    color: var(--accent-color);
+    /* Title in accent color */
+    margin-top: 0;
+    font-size: 1.6em;
 }
 
 /* Event Cards Grid */
@@ -845,6 +1079,9 @@ ul li::before {
     background-color: white;
     border-top: 5px solid var(--accent-color);
     padding-bottom: 30px;
+    border-radius: 8px; /* Ensure contact form container has its own radius */
+    margin-bottom: 25px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
 
 .contact-form label {
@@ -856,6 +1093,10 @@ ul li::before {
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
+.contact-form input[type="tel"], /* Added for phone input */
+.contact-form input[type="number"], /* Added for number input */
+.contact-form input[type="date"],   /* Added for date input */
+.contact-form select, /* Added for select dropdown */
 .contact-form textarea {
     width: calc(100% - 24px); /* Account for padding and border */
     padding: 12px;
@@ -865,14 +1106,31 @@ ul li::before {
     font-family: var(--font-body);
     font-size: 1em;
     background-color: var(--secondary-color);
+    color: var(--text-color);
+    -webkit-appearance: none; /* Remove default select styling for custom arrow */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.contact-form select {
+    background-image: url('data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23004080%22%20d%3D%22M287%20163.7c-4.3%204.3-10.1%206.5-15.9%206.5H21.3c-5.8%200-11.6-2.2-15.9-6.5-8.7-8.7-8.7-22.6%200-31.3l124.7-124.7c8.7-8.7%2022.6-8.7%2031.3%200l124.7%20124.7c8.7%208.7%208.7%2022.6%200%2031.3z%22%2F%3E%3C%2Fsvg%3E');
+    background-repeat: no-repeat;
+    background-position: right 10px top 50%;
+    background-size: 12px;
+    padding-right: 30px; /* Make space for the arrow */
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
+.contact-form input[type="tel"]:focus, /* Added for phone input */
+.contact-form input[type="number"]:focus, /* Added for number input */
+.contact-form input[type="date"]:focus,   /* Added for date input */
+.contact-form select:focus, /* Added for select dropdown */
 .contact-form textarea:focus {
     border-color: var(--primary-color);
     outline: none;
-    box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.2); /* Softer focus ring */
+    box-shadow: 0 0 0 3px rgba(0, 64, 128, 0.2);
+    /* Softer focus ring */
     background-color: #fff;
 }
 
@@ -893,24 +1151,26 @@ ul li::before {
     margin-right: 10px;
     font-size: 1.1em;
 }
+
 .map-container {
-  position: relative;
-  width: 100%;
-  height: 0;
-  padding-bottom: 60%; /* Ajusta la proporción vertical del mapa */
-  border-radius: 10px;
-  overflow: hidden;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-  margin-top: 10px;
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 60%;
+    /* Ajusta la proporción vertical del mapa */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 10px;
 }
 
 .map-container iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
 }
 
 .map-placeholder {
@@ -938,6 +1198,108 @@ ul li::before {
 
 .map-placeholder p {
     font-style: normal;
+}
+/* New: Direct Contact for Misiones/Sections */
+.contact-direct {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px dashed var(--border-color);
+    text-align: center;
+}
+
+.contact-direct h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.contact-direct p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.contact-direct p i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* New: FAQ Accordion Styles */
+.faq-accordion {
+    margin-top: 25px;
+}
+
+.faq-item {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden; /* For smooth max-height transition */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 18px 25px;
+    background-color: var(--primary-color); /* Primary color for question bar */
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0; /* Reset margin */
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--hover-link-color);
+}
+
+.faq-question i {
+    color: var(--accent-color); /* Icon color in question */
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg); /* Rotate icon when active */
+}
+
+.faq-answer {
+    padding: 0 25px;
+    background-color: var(--secondary-color); /* Light background for answer */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    color: var(--text-color);
+}
+
+.faq-answer p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.faq-answer.active {
+    max-height: 300px; /* Adjust as needed for max content */
+    padding-top: 0; /* Adjust padding to apply on inner <p> */
+    padding-bottom: 0; /* Adjust padding to apply on inner <p> */
+    border-top: 1px solid var(--border-color); /* Separator */
+}
+
+/* Adjust padding on inner p when active */
+.faq-answer.active p {
+    padding-top: 15px;
+    padding-bottom: 15px;
 }
 
 /* Footer */
@@ -980,7 +1342,8 @@ footer h4 {
 }
 
 .footer-info {
-    flex-basis: 100%; /* Make info section span full width */
+    flex-basis: 100%;
+    /* Make info section span full width */
     margin-top: 30px;
     padding-top: 25px;
     border-top: 1px solid rgba(255, 255, 255, 0.2);
@@ -999,7 +1362,8 @@ footer h4 {
 }
 
 .footer-links ul li::before {
-    content: none; /* Remove bullet from footer links */
+    content: none;
+    /* Remove bullet from footer links */
 }
 
 .footer-links ul li a {
@@ -1037,9 +1401,11 @@ footer h4 {
     }
 
     nav {
-        order: 3; /* Move nav below logo/toggle */
+        order: 3;
+        /* Move nav below logo/toggle */
         width: 100%;
-        max-height: 0; /* Hidden by default */
+        max-height: 0;
+        /* Hidden by default */
         overflow: hidden;
         transition: max-height 0.5s ease-out, opacity 0.5s ease;
         background-color: var(--primary-color);
@@ -1048,7 +1414,8 @@ footer h4 {
     }
 
     nav.active {
-        max-height: 300px; /* Or a value large enough to show all links */
+        max-height: 300px;
+        /* Or a value large enough to show all links */
         opacity: 1;
         padding: 15px 0;
     }
@@ -1057,13 +1424,16 @@ footer h4 {
         flex-direction: column;
         align-items: center;
     }
+
     nav ul li {
         margin: 10px 0;
     }
+
     nav ul li a {
         padding: 8px 0;
         font-size: 1.1em;
     }
+
     nav ul li a::after {
         left: 50%;
         transform: translateX(-50%);
@@ -1072,40 +1442,65 @@ footer h4 {
     .nav-toggle {
         display: flex;
         order: 2;
-        margin-left: auto; /* Push to the right */
+        margin-left: auto;
+        /* Push to the right */
     }
 
     .logo {
-        margin-right: auto; /* Push to the left */
+        margin-right: auto;
+        /* Push to the left */
         order: 1;
     }
 
     .banner {
         height: 350px;
     }
+
     .banner-message h3 {
         font-size: 3em;
     }
+
     .banner-message p {
         font-size: 1.5em;
     }
+
+    .hero-banner {
+        height: 300px;
+    }
+
+    .hero-overlay h2 {
+        font-size: 3em;
+    }
+
+    .hero-overlay p {
+        font-size: 1.5em;
+    }
+
     h2 {
         font-size: 2.2rem;
     }
+
     h3 {
         font-size: 1.6rem;
     }
+
     .footer-content {
         flex-direction: column;
         align-items: center;
         text-align: center;
     }
+
     .footer-col {
         width: 100%;
         margin-bottom: 25px;
     }
+
     footer h4 {
         text-align: center;
+    }
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
     }
 }
 
@@ -1114,30 +1509,48 @@ footer h4 {
         padding: 20px;
         margin: 20px auto;
     }
-    #dynamic-content-area > section { /* Adjust section padding/margin within dynamic area */
+
+    #dynamic-content-area>section {
+        /* Adjust section padding/margin within dynamic area */
         padding: 20px;
     }
+
     .banner {
         height: 280px;
     }
+
     .banner-message h3 {
         font-size: 2.5em;
     }
+
     .banner-message p {
+        font-size: 1.2em;
+    }
+    .hero-banner {
+        height: 250px;
+    }
+    .hero-overlay h2 {
+        font-size: 2.5em;
+    }
+    .hero-overlay p {
         font-size: 1.2em;
     }
     h2 {
         font-size: 1.8rem;
     }
+
     h3 {
         font-size: 1.4rem;
     }
+
     .intro-block h3 {
         font-size: 1.6rem;
     }
+
     .intro-block p {
         font-size: 0.95em;
     }
+
     .news-grid,
     .home-ministry-grid,
     .doctrine-principles-grid,
@@ -1146,33 +1559,61 @@ footer h4 {
     .media-grid,
     .event-cards-grid,
     .contact-info-map-grid,
-    .leader-grid {
+    .leader-grid,
+    .areas-grid,
+    .involvement-steps-grid{
         grid-template-columns: 1fr;
     }
+
     .news-item img {
         height: 180px;
     }
+
     .ministry-item img {
         height: 120px;
     }
+
     .home-ministry-item {
         padding: 20px 15px;
     }
+
     .home-ministry-item img {
         width: 80px;
         height: 80px;
     }
+
     .btn {
         font-size: 0.95em;
         padding: 15px 20px;
     }
+
     .social-links .social-icons a,
     .footer-social-links .social-icons a {
         font-size: 1.8em;
     }
+
     .contact-form input,
-    .contact-form textarea {
+    .contact-form textarea,
+    .contact-form select {
         width: calc(100% - 20px);
+    }
+
+    .faq-question {
+        font-size: 1.1em;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+
+    .contact-direct p {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+
+    .contact-direct p i {
+        margin-right: 0;
+        margin-bottom: 5px;
     }
 }
 
@@ -1180,62 +1621,113 @@ footer h4 {
     header h1 {
         font-size: 1.8rem;
     }
+
     .logo img {
         height: 40px;
     }
+
     .banner {
         height: 220px;
     }
+
     .banner-message h3 {
         font-size: 2em;
     }
+
     .banner-message p {
         font-size: 1em;
         margin-bottom: 15px;
     }
+
     .banner-message .btn {
         padding: 10px 20px;
         font-size: 0.9em;
     }
+
+    .hero-banner {
+        height: 200px;
+        margin-bottom: 25px;
+    }
+    .hero-overlay h2 {
+        font-size: 2em;
+    }
+    .hero-overlay p {
+        font-size: 1em;
+    }
+
     h2 {
         font-size: 1.6rem;
+        padding-bottom: 10px;
+        margin-bottom: 25px;
     }
+
     h3 {
         font-size: 1.2rem;
         padding-left: 10px;
     }
+
     .intro-block h3 {
         font-size: 1.6rem;
     }
+
     .intro-block p {
         font-size: 0.95em;
     }
+
     .news-item h4 {
         font-size: 1.1em;
     }
+
     .btn {
         font-size: 0.9em;
         padding: 10px 18px;
     }
+
     .social-links .social-icons a,
     .footer-social-links .social-icons a {
         font-size: 1.5em;
     }
+
     .footer-info {
         padding-top: 15px;
     }
+
     .mvv-item h4,
     .doctrine-item h4,
     .ministry-item h4,
     .media-item h4,
-    .leader-item h4 {
+    .leader-item h4,
+    .area-item h4,
+    .step-item h4 {
         font-size: 1.2em;
     }
+
     .mvv-item ul li::before {
         font-size: 0.9em;
     }
+
     .leader-item img {
         width: 100px;
         height: 100px;
+    }
+    .faq-question {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+    .faq-question i {
+        font-size: 1em;
+    }
+    .faq-answer p {
+        font-size: 0.9em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .contact-form label {
+        font-size: 0.9em;
+    }
+    .contact-form input, .contact-form select, .contact-form textarea {
+        font-size: 0.9em;
+        padding: 10px;
+        margin-bottom: 15px;
     }
 }

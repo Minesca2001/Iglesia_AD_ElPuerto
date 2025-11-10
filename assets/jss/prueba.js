@@ -18,11 +18,11 @@ async function loadSection(sectionId) {
     // Validate sectionId to prevent loading arbitrary files
     const validSections = [
         'home', 'nosotros', 'doctrina', 'ministerios',
-        'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
+        'eventos-noticias', 'recursos', 'medios', 'contacto',
         // Add specific ministry pages for dynamic loading
         'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
         // Add general ministry pages for dynamic loading
-        'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'missions'
+        'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'
     ];
     if (!validSections.includes(sectionId)) {
         console.warn(`Attempted to load invalid section: ${sectionId}. Loading home instead.`);
@@ -47,11 +47,15 @@ async function loadSection(sectionId) {
         // Update active class for navigation links
         document.querySelectorAll('#main-nav ul li a').forEach(link => {
             link.classList.remove('active');
-            // Check if the link href matches the main section or a sub-section of 'ministerios'
-            if (link.getAttribute('href') === `#${sectionId}` || (sectionId === 'ministerios' && link.getAttribute('href') === '#ministerios')) {
+            const linkHref = link.getAttribute('href');
+            // Check if the link href matches the current section, or if it's a ministry sub-page
+            if (linkHref === `#${sectionId}`) {
+                link.classList.add('active');
+            } else if (linkHref === '#ministerios' && ['femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica', 'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'].includes(sectionId)) {
                 link.classList.add('active');
             }
         });
+
         // Initialize FAQ accordion functionality for newly loaded content
         initFaqAccordion();
 
@@ -69,6 +73,7 @@ async function loadSection(sectionId) {
         }
     }
 }
+
 /**
  * Initializes FAQ accordion functionality.
  */
@@ -135,16 +140,16 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1);
             const validSections = [
                 'home', 'nosotros', 'doctrina', 'ministerios',
-                'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
-                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',  'adoracion', 'musica',
-                'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats', 'missions'
+                'eventos-noticias', 'recursos', 'medios', 'contacto',
+                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
+                'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia'
             ];
 
-            if (validSections.includes(targetId)) {
+            if (validSections.includes(targetId) && targetId !== 'contacto-misiones') { // Exclude internal #contacto-misiones from full page load
                 e.preventDefault(); // Prevent default only if it's a dynamic section
                 loadSection(targetId);
             } else {
-                // For non-dynamic anchors (e.g., within the same loaded section), allow default smooth scroll
+                // For non-dynamic anchors (e.g., within the same loaded section, or specific internal like #contacto-misiones), allow default smooth scroll
                 const targetElement = document.querySelector(this.getAttribute('href'));
                 if (targetElement) {
                     e.preventDefault(); // Prevent default link behavior if it's an internal anchor

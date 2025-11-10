@@ -1,0 +1,203 @@
+.btn-group {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+    justify-content: center;
+    gap: 15px; /* Space between buttons */
+}
+/* Contact Form & Info/Map Grid */
+.contact-form-container {
+    border-radius: 8px; /* Ensure contact form container has its own radius */
+    margin-bottom: 25px;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form input[type="tel"], /* Added for phone input */
+.contact-form input[type="number"], /* Added for number input */
+.contact-form input[type="date"],   /* Added for date input */
+.contact-form select { /* Added for select dropdown */
+    color: var(--text-color);
+    -webkit-appearance: none; /* Remove default select styling for custom arrow */
+    -moz-appearance: none;
+    appearance: none;
+}
+
+/* New: Direct Contact for Misiones/Sections */
+.contact-direct {
+    background-color: var(--secondary-color);
+    border-radius: 8px;
+    padding: 20px;
+    margin-top: 30px;
+    border: 1px dashed var(--border-color);
+    text-align: center;
+}
+
+.contact-direct h4 {
+    color: var(--primary-color);
+    margin-top: 0;
+    font-size: 1.4em;
+    text-align: center;
+}
+
+.contact-direct p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 8px;
+    font-size: 1em;
+    color: var(--text-color);
+}
+
+.contact-direct p i {
+    color: var(--primary-color);
+    font-size: 1.2em;
+}
+
+/* New: FAQ Accordion Styles */
+.faq-accordion {
+    margin-top: 25px;
+}
+
+.faq-item {
+    background-color: white;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    margin-bottom: 10px;
+    overflow: hidden; /* For smooth max-height transition */
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+}
+
+.faq-question {
+    padding: 18px 25px;
+    background-color: var(--primary-color); /* Primary color for question bar */
+    color: white;
+    font-family: var(--font-heading);
+    font-size: 1.2em;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 0; /* Reset margin */
+    transition: background-color 0.3s ease;
+}
+
+.faq-question:hover {
+    background-color: var(--hover-link-color);
+}
+
+.faq-question i {
+    color: var(--accent-color); /* Icon color in question */
+    font-size: 1.1em;
+    transition: transform 0.3s ease;
+}
+
+.faq-question.active i {
+    transform: rotate(180deg); /* Rotate icon when active */
+}
+
+.faq-answer {
+    padding: 0 25px;
+    background-color: var(--secondary-color); /* Light background for answer */
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.5s ease-out, padding 0.5s ease-out;
+    color: var(--text-color);
+}
+
+.faq-answer p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+    margin-bottom: 0; /* Remove default paragraph margin */
+}
+
+.faq-answer.active {
+    max-height: 300px; /* Adjust as needed for max content */
+    padding-top: 0; /* Adjust padding to apply on inner <p> */
+    padding-bottom: 0; /* Adjust padding to apply on inner <p> */
+    border-top: 1px solid var(--border-color); /* Separator */
+}
+
+/* Adjust padding on inner p when active */
+.faq-answer.active p {
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+    .hero-banner {
+        height: 300px;
+    }
+    .hero-overlay h2 {
+        font-size: 3em;
+    }
+    .hero-overlay p {
+        font-size: 1.5em;
+    }
+    .btn-group {
+        flex-direction: column;
+        align-items: center;
+    }
+    .hero-banner {
+        height: 250px;
+    }
+    .hero-overlay h2 {
+        font-size: 2.5em;
+    }
+    .hero-overlay p {
+        font-size: 1.2em;
+    }
+    .areas-grid,
+    .involvement-steps-grid {
+        grid-template-columns: 1fr;
+    }
+   
+    .contact-form select {
+        width: calc(100% - 20px);
+    }
+    .faq-question {
+        font-size: 1.1em;
+        padding: 15px 20px;
+        gap: 10px;
+    }
+    .contact-direct p {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 5px;
+    }
+    .contact-direct p i {
+        margin-right: 0;
+        margin-bottom: 5px;
+    }
+
+@media (max-width: 480px) {
+    h2 {
+        padding-bottom: 10px;
+        margin-bottom: 25px;
+    }
+    
+    .area-item h4,
+    .step-item h4 {
+        font-size: 1.2em;
+    }
+    
+    .faq-question {
+        font-size: 1em;
+        padding: 12px 15px;
+    }
+    .faq-question i {
+        font-size: 1em;
+    }
+    .faq-answer p {
+        font-size: 0.9em;
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .contact-form label {
+        font-size: 0.9em;
+    }
+    .contact-form input, .contact-form select, .contact-form textarea {
+        font-size: 0.9em;
+        padding: 10px;
+        margin-bottom: 15px;
+    }
+}
