@@ -52,6 +52,60 @@ async function loadSection(sectionId) {
                 link.classList.add('active');
             }
         });
+
+        // Esta seccion es para cargar los eventos desde el json
+        async function cargarEventos() {
+            try {
+                const response = await fetch('assets/jss/eventos.json');
+                const eventos = await response.json();
+
+                const hoy = new Date();
+                const inicioSemana = new Date(hoy);
+                inicioSemana.setDate(hoy.getDate() - hoy.getDay());
+                const finSemana = new Date(inicioSemana);
+                finSemana.setDate(inicioSemana.getDate() + 6);
+
+                const eventosSemana = eventos.filter(e => {
+                    const fecha = new Date(e.fecha_inicio);
+                    return fecha >= inicioSemana && fecha <= finSemana;
+                });
+
+                mostrarEventos(eventosSemana);
+            } catch (error) {
+                document.getElementById('carouselContent').innerHTML =
+                    "<div class='text-danger py-4'>Error cargando eventos.</div>";
+            }
+        }
+
+        function mostrarEventos(eventos) {
+            const contenedor = document.getElementById('carouselContent');
+            contenedor.innerHTML = '';
+
+            if (eventos.length === 0) {
+                contenedor.innerHTML = "<div class='text-muted py-4'>No hay eventos esta semana.</div>";
+                return;
+            }
+
+            eventos.forEach((evento, i) => {
+                const item = document.createElement('div');
+                item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
+                item.innerHTML = `
+                <div class="ministry-item mx-auto" style="max-width: 700px;">
+                    <img src="${evento.imagen}" alt="${evento.nombre}">
+                    <div class="ministry-item-content">
+                        <h4>${evento.nombre}</h4>
+                        <p><strong>📍 Lugar:</strong> ${evento.lugar}</p>
+                        <p><strong>🕒 Hora:</strong> ${evento.hora}</p>
+                        <p><strong>📅 Fecha:</strong> ${evento.fecha_inicio}</p>
+                        <p>${evento.descripcion}</p>
+                    </div>
+                </div>`;
+                contenedor.appendChild(item);
+            });
+        }
+
+        cargarEventos();
+
         // Initialize FAQ accordion functionality for newly loaded content
         initFaqAccordion();
 
@@ -104,7 +158,7 @@ function toggleFaqAnswer(event) {
     // Toggle current FAQ item
     question.classList.toggle('active');
     answer.classList.toggle('active');
-    
+
     if (question.classList.contains('active')) {
         icon.style.transform = 'rotate(180deg)';
     } else {
@@ -136,7 +190,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const validSections = [
                 'home', 'nosotros', 'doctrina', 'ministerios',
                 'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
-                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza',  'adoracion', 'musica',
+                'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
                 'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats', 'missions'
             ];
 
@@ -156,7 +210,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     });
                 }
             }
-            
+
             // Close mobile nav if open after clicking a link
             const mainNav = document.getElementById('main-nav');
             const navToggle = document.getElementById('nav-toggle');

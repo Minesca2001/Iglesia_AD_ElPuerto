@@ -25,7 +25,7 @@
 <script>
     async function cargarEventos() {
         try {
-            const response = await fetch('/assets/jss/eventos.json');
+            const response = await fetch('assets/jss/eventos.json');
             const eventos = await response.json();
 
             const hoy = new Date();

@@ -1,7 +1,7 @@
 [
   {
     "nombre": "Oración",
-    "fecha_inicio": "2025-11-08",
+    "fecha_inicio": "2025-11-13",
     "hora": "7:00 PM",
     "lugar": "Iglesia Asambleas de Dios Central 'El Puerto'",
     "descripcion": "Reunión de oración semanal.",
@@ -9,7 +9,7 @@
   },
   {
     "nombre": "Retiro Espiritual",
-    "fecha_inicio": "2025-11-07",
+    "fecha_inicio": "2025-11-14",
     "hora": "9:00 AM",
     "lugar": "Iglesia Asambleas de Dios Central 'El Puerto'",
     "descripcion": "Un día de retiro espiritual y reflexión.",
@@ -17,7 +17,7 @@
   },
   {
     "nombre": "Campaña Juvenil",
-    "fecha_inicio": "2025-11-06",
+    "fecha_inicio": "2025-11-15",
     "hora": "8:00 PM",
     "lugar": "Capilla 'Los Mameyes'",
     "descripcion": "Campaña evangelística con jóvenes invitados.",
