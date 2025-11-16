@@ -1,26 +1,23 @@
 [
   {
-    "nombre": "Oración",
-    "fecha_inicio": "2025-11-13",
+    "titulo": "Conferencia Anual de Familias",
+    "fecha": "2025-11-15",
+    "hora": "6:00 PM",
+    "lugar": "Centro de Convenciones",
+    "imagen": "assets/img/news-event-1.png"
+  },
+  {
+    "titulo": "Conferencia Anual de Misiones",
+    "fecha": "2025-11-20",
     "hora": "7:00 PM",
-    "lugar": "Iglesia Asambleas de Dios Central 'El Puerto'",
-    "descripcion": "Reunión de oración semanal.",
-    "imagen": "https://images.unsplash.com/photo-1503676260728-1c00da094a0b"
+    "lugar": "Auditorio Principal",
+    "imagen": "assets/img/news-event-2.png"
   },
   {
-    "nombre": "Retiro Espiritual",
-    "fecha_inicio": "2025-11-14",
-    "hora": "9:00 AM",
-    "lugar": "Iglesia Asambleas de Dios Central 'El Puerto'",
-    "descripcion": "Un día de retiro espiritual y reflexión.",
-    "imagen": "https://images.unsplash.com/photo-1506784983877-45594efa4cbe"
-  },
-  {
-    "nombre": "Campaña Juvenil",
-    "fecha_inicio": "2025-11-15",
+    "titulo": "Vigilia Juvenil",
+    "fecha": "2025-11-28",
     "hora": "8:00 PM",
-    "lugar": "Capilla 'Los Mameyes'",
-    "descripcion": "Campaña evangelística con jóvenes invitados.",
-    "imagen": "https://images.unsplash.com/photo-1533111971600-5fd87c9e1b6c"
+    "lugar": "Templo Central",
+    "imagen": "assets/img/news-event-1.png"
   }
 ]

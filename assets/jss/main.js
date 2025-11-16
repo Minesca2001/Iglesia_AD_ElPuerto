@@ -18,7 +18,7 @@ async function loadSection(sectionId) {
     // Validate sectionId to prevent loading arbitrary files
     const validSections = [
         'home', 'nosotros', 'doctrina', 'ministerios',
-        'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
+        'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos', 'mapa-asientos',
         // Add specific ministry pages for dynamic loading
         'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
         // Add general ministry pages for dynamic loading
@@ -54,59 +54,45 @@ async function loadSection(sectionId) {
         });
 
         // Esta seccion es para cargar los eventos desde el json
-        async function cargarEventos() {
-            try {
-                const response = await fetch('assets/jss/eventos.json');
-                const eventos = await response.json();
+        {
+            async function loadEventCarousel() {
+                try {
+                    const response = await fetch('/assets/jss/eventos.json');
+                    const eventos = await response.json();
 
-                const hoy = new Date();
-                const inicioSemana = new Date(hoy);
-                inicioSemana.setDate(hoy.getDate() - hoy.getDay());
-                const finSemana = new Date(inicioSemana);
-                finSemana.setDate(inicioSemana.getDate() + 6);
+                    const carousel = document.getElementById('event-carousel');
+                    carousel.innerHTML = '';
 
-                const eventosSemana = eventos.filter(e => {
-                    const fecha = new Date(e.fecha_inicio);
-                    return fecha >= inicioSemana && fecha <= finSemana;
-                });
+                    eventos.forEach((evento, index) => {
+                        const img = document.createElement('img');
+                        img.src = evento.imagen;
+                        img.alt = evento.titulo;
 
-                mostrarEventos(eventosSemana);
-            } catch (error) {
-                document.getElementById('carouselContent').innerHTML =
-                    "<div class='text-danger py-4'>Error cargando eventos.</div>";
-            }
-        }
+                        if (index === 0) img.classList.add('active');
 
-        function mostrarEventos(eventos) {
-            const contenedor = document.getElementById('carouselContent');
-            contenedor.innerHTML = '';
+                        carousel.appendChild(img);
+                    });
 
-            if (eventos.length === 0) {
-                contenedor.innerHTML = "<div class='text-muted py-4'>No hay eventos esta semana.</div>";
-                return;
+                    startCarousel();
+                } catch (error) {
+                    console.error("Error cargando el carrusel:", error);
+                }
             }
 
-            eventos.forEach((evento, i) => {
-                const item = document.createElement('div');
-                item.className = `carousel-item ${i === 0 ? 'active' : ''}`;
-                item.innerHTML = `
-                <div class="ministry-item mx-auto" style="max-width: 700px;">
-                    <img src="${evento.imagen}" alt="${evento.nombre}">
-                    <div class="ministry-item-content">
-                        <h4>${evento.nombre}</h4>
-                        <p><strong>📍 Lugar:</strong> ${evento.lugar}</p>
-                        <p><strong>🕒 Hora:</strong> ${evento.hora}</p>
-                        <p><strong>📅 Fecha:</strong> ${evento.fecha_inicio}</p>
-                        <p>${evento.descripcion}</p>
-                    </div>
-                </div>`;
-                contenedor.appendChild(item);
-            });
-        }
+            function startCarousel() {
+                const images = document.querySelectorAll('#event-carousel img');
+                let current = 0;
 
-        cargarEventos();
+                setInterval(() => {
+                    images[current].classList.remove('active');
+                    current = (current + 1) % images.length;
+                    images[current].classList.add('active');
+                }, 6000);
+            }
 
-        // Initialize FAQ accordion functionality for newly loaded content
+            loadEventCarousel();
+
+        }        // Initialize FAQ accordion functionality for newly loaded content
         initFaqAccordion();
 
     } catch (error) {
@@ -189,7 +175,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const targetId = this.getAttribute('href').substring(1);
             const validSections = [
                 'home', 'nosotros', 'doctrina', 'ministerios',
-                'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos',
+                'eventos-noticias', 'recursos', 'medios', 'contacto', 'empty-seats', 'calendary', 'eventos', 'mapa-asientos',
                 'femenil', 'juventud', 'varones', 'misioneritas', 'exploradores', 'danza', 'adoracion', 'musica',
                 'escuela-dominical', 'misiones', 'evangelismo', 'desead', 'multimedia', 'empty-seats', 'missions'
             ];
@@ -248,4 +234,5 @@ document.addEventListener('DOMContentLoaded', () => {
             document.body.classList.toggle('nav-open'); // Add/remove class to body to disable scroll
         });
     }
+
 });

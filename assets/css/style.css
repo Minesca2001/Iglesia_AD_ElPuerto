@@ -1075,32 +1075,60 @@ ul li::before {
 }
 
 .event-card {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      overflow: hidden;
-    }
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
 
-    .event-img {
-      width: 100%;
-      height: 220px;
-      object-fit: cover;
-    }
+.event-img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
 
-    .event-info {
-      padding: 15px;
-    }
+.event-info {
+    padding: 15px;
+}
 
-    .carousel-inner {
-      padding: 20px 0;
-    }
-    
+.carousel-inner {
+    padding: 20px 0;
+}
+
+/* Diseno de Carrousel*/
+.fade-carousel {
+    position: relative;
+    width: 100%;
+    max-width: 850px;
+    height: 450px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 15px;
+}
+
+.fade-carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background-color: whitesmoke;
+    object-position: center;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 1.2s ease-in-out;
+
+}
+
+.fade-carousel img.active {
+    opacity: 1;
+}
+
 /* Contact Form & Info/Map Grid */
 .contact-form-container {
     background-color: white;
     border-top: 5px solid var(--accent-color);
     padding-bottom: 30px;
-    border-radius: 8px; /* Ensure contact form container has its own radius */
+    border-radius: 8px;
+    /* Ensure contact form container has its own radius */
     margin-bottom: 25px;
     box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
 }
@@ -1114,12 +1142,17 @@ ul li::before {
 
 .contact-form input[type="text"],
 .contact-form input[type="email"],
-.contact-form input[type="tel"], /* Added for phone input */
-.contact-form input[type="number"], /* Added for number input */
-.contact-form input[type="date"],   /* Added for date input */
-.contact-form select, /* Added for select dropdown */
+.contact-form input[type="tel"],
+/* Added for phone input */
+.contact-form input[type="number"],
+/* Added for number input */
+.contact-form input[type="date"],
+/* Added for date input */
+.contact-form select,
+/* Added for select dropdown */
 .contact-form textarea {
-    width: calc(100% - 24px); /* Account for padding and border */
+    width: calc(100% - 24px);
+    /* Account for padding and border */
     padding: 12px;
     margin-bottom: 18px;
     border: 1px solid var(--border-color);
@@ -1128,7 +1161,8 @@ ul li::before {
     font-size: 1em;
     background-color: var(--secondary-color);
     color: var(--text-color);
-    -webkit-appearance: none; /* Remove default select styling for custom arrow */
+    -webkit-appearance: none;
+    /* Remove default select styling for custom arrow */
     -moz-appearance: none;
     appearance: none;
 }
@@ -1138,15 +1172,20 @@ ul li::before {
     background-repeat: no-repeat;
     background-position: right 10px top 50%;
     background-size: 12px;
-    padding-right: 30px; /* Make space for the arrow */
+    padding-right: 30px;
+    /* Make space for the arrow */
 }
 
 .contact-form input[type="text"]:focus,
 .contact-form input[type="email"]:focus,
-.contact-form input[type="tel"]:focus, /* Added for phone input */
-.contact-form input[type="number"]:focus, /* Added for number input */
-.contact-form input[type="date"]:focus,   /* Added for date input */
-.contact-form select:focus, /* Added for select dropdown */
+.contact-form input[type="tel"]:focus,
+/* Added for phone input */
+.contact-form input[type="number"]:focus,
+/* Added for number input */
+.contact-form input[type="date"]:focus,
+/* Added for date input */
+.contact-form select:focus,
+/* Added for select dropdown */
 .contact-form textarea:focus {
     border-color: var(--primary-color);
     outline: none;
@@ -1220,6 +1259,7 @@ ul li::before {
 .map-placeholder p {
     font-style: normal;
 }
+
 /* New: Direct Contact for Misiones/Sections */
 .contact-direct {
     background-color: var(--secondary-color);
@@ -1262,13 +1302,15 @@ ul li::before {
     border: 1px solid var(--border-color);
     border-radius: 8px;
     margin-bottom: 10px;
-    overflow: hidden; /* For smooth max-height transition */
+    overflow: hidden;
+    /* For smooth max-height transition */
     box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
 }
 
 .faq-question {
     padding: 18px 25px;
-    background-color: var(--primary-color); /* Primary color for question bar */
+    background-color: var(--primary-color);
+    /* Primary color for question bar */
     color: white;
     font-family: var(--font-heading);
     font-size: 1.2em;
@@ -1277,7 +1319,8 @@ ul li::before {
     display: flex;
     align-items: center;
     gap: 15px;
-    margin: 0; /* Reset margin */
+    margin: 0;
+    /* Reset margin */
     transition: background-color 0.3s ease;
 }
 
@@ -1286,18 +1329,21 @@ ul li::before {
 }
 
 .faq-question i {
-    color: var(--accent-color); /* Icon color in question */
+    color: var(--accent-color);
+    /* Icon color in question */
     font-size: 1.1em;
     transition: transform 0.3s ease;
 }
 
 .faq-question.active i {
-    transform: rotate(180deg); /* Rotate icon when active */
+    transform: rotate(180deg);
+    /* Rotate icon when active */
 }
 
 .faq-answer {
     padding: 0 25px;
-    background-color: var(--secondary-color); /* Light background for answer */
+    background-color: var(--secondary-color);
+    /* Light background for answer */
     max-height: 0;
     overflow: hidden;
     transition: max-height 0.5s ease-out, padding 0.5s ease-out;
@@ -1307,14 +1353,19 @@ ul li::before {
 .faq-answer p {
     padding-top: 15px;
     padding-bottom: 15px;
-    margin-bottom: 0; /* Remove default paragraph margin */
+    margin-bottom: 0;
+    /* Remove default paragraph margin */
 }
 
 .faq-answer.active {
-    max-height: 300px; /* Adjust as needed for max content */
-    padding-top: 0; /* Adjust padding to apply on inner <p> */
-    padding-bottom: 0; /* Adjust padding to apply on inner <p> */
-    border-top: 1px solid var(--border-color); /* Separator */
+    max-height: 300px;
+    /* Adjust as needed for max content */
+    padding-top: 0;
+    /* Adjust padding to apply on inner <p> */
+    padding-bottom: 0;
+    /* Adjust padding to apply on inner <p> */
+    border-top: 1px solid var(--border-color);
+    /* Separator */
 }
 
 /* Adjust padding on inner p when active */
@@ -1519,6 +1570,7 @@ footer h4 {
     footer h4 {
         text-align: center;
     }
+
     .btn-group {
         flex-direction: column;
         align-items: center;
@@ -1547,15 +1599,19 @@ footer h4 {
     .banner-message p {
         font-size: 1.2em;
     }
+
     .hero-banner {
         height: 250px;
     }
+
     .hero-overlay h2 {
         font-size: 2.5em;
     }
+
     .hero-overlay p {
         font-size: 1.2em;
     }
+
     h2 {
         font-size: 1.8rem;
     }
@@ -1582,7 +1638,7 @@ footer h4 {
     .contact-info-map-grid,
     .leader-grid,
     .areas-grid,
-    .involvement-steps-grid{
+    .involvement-steps-grid {
         grid-template-columns: 1fr;
     }
 
@@ -1669,9 +1725,11 @@ footer h4 {
         height: 200px;
         margin-bottom: 25px;
     }
+
     .hero-overlay h2 {
         font-size: 2em;
     }
+
     .hero-overlay p {
         font-size: 1em;
     }
@@ -1731,22 +1789,29 @@ footer h4 {
         width: 100px;
         height: 100px;
     }
+
     .faq-question {
         font-size: 1em;
         padding: 12px 15px;
     }
+
     .faq-question i {
         font-size: 1em;
     }
+
     .faq-answer p {
         font-size: 0.9em;
         padding-top: 10px;
         padding-bottom: 10px;
     }
+
     .contact-form label {
         font-size: 0.9em;
     }
-    .contact-form input, .contact-form select, .contact-form textarea {
+
+    .contact-form input,
+    .contact-form select,
+    .contact-form textarea {
         font-size: 0.9em;
         padding: 10px;
         margin-bottom: 15px;

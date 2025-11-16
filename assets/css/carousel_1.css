@@ -1,0 +1,68 @@
+.event-carousel {
+    width: 100%;
+    max-width: 900px; /* tamaño del carrusel */
+    margin: 40px auto 0 auto;
+    padding: 0;
+    position: relative;
+}
+
+.carousel-container {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #fff;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+.carousel-slide {
+    display: none;
+    width: 100%;
+    position: relative;
+}
+
+.carousel-slide.active {
+    display: block;
+}
+
+.carousel-slide img {
+    width: 100%;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+}
+
+.carousel-caption {
+    width: 80%;
+    padding: 15px;
+    color: #fff;
+    background: rgba(0,0,0,0.55);
+    position: relative;
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    border-radius: 0 0 12px 12px;
+}
+
+.carousel-controls {
+    position: absolute;
+    top: 45%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.carousel-controls button {
+    background: rgba(0,0,0,0.45);
+    color: white;
+    border: none;
+    padding: 12px 15px;
+    cursor: pointer;
+    font-size: 24px;
+    border-radius: 50%;
+    transition: 0.2s;
+}
+
+.carousel-controls button:hover {
+    background: rgba(0,0,0,0.7);
+}

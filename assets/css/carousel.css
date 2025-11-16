@@ -1,150 +1,114 @@
-.carousel {
-  position: relative;
-}
-
-.carousel-inner {
-  position: relative;
+.carrusel-container {
   width: 100%;
+  max-width: 850px;
+  margin: auto;
+  position: relative;
   overflow: hidden;
-  }
+  border-radius: 15px;
+}
 
-.carousel-item {
-  position: relative;
-  display: none;
-  float: left;
+.carrusel-slides img {
   width: 100%;
-  margin-right: -100%;
-  backface-visibility: hidden;
+  height: 420px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 15px;
 }
 
-.carousel-item.active,
-.carousel-item-next,
-.carousel-item-prev {
+.carrusel-slide {
+  display: none;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.carrusel-slide.active {
   display: block;
+  animation: fade 1.2s ease;
 }
 
-.carousel-item-next:not(.carousel-item-start),
-.active.carousel-item-end {
-  transform: translateX(100%);
-}
-
-.carousel-item-prev:not(.carousel-item-end),
-.active.carousel-item-start {
-  transform: translateX(-100%);
-}
-
-/* Alternate transitions */
-.carousel-fade {
-  .carousel-item {
+@keyframes fade {
+  from {
     opacity: 0;
-    transition-property: opacity;
-    transform: none;
   }
 
-  .carousel-item.active,
-  .carousel-item-next.carousel-item-start,
-  .carousel-item-prev.carousel-item-end {
-    z-index: 1;
+  to {
     opacity: 1;
   }
-
-  .active.carousel-item-start,
-  .active.carousel-item-end {
-    z-index: 0;
-    opacity: 0;
-  }
 }
 
-/* Left/right controls for nav */
-.carousel-control-prev,
-.carousel-control-next {
+/* Botones */
+.carrusel-btn {
   position: absolute;
-  top: 0;
-  bottom: 0;
-  z-index: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: carousel-control-width;
-  padding: 0;
-  color: carousel-control-color;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0, 0, 0, .5);
+  border: none;
+  color: white;
+  padding: 12px;
+  font-size: 28px;
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.prev {
+  left: 15px;
+}
+
+.next {
+  right: 15px;
+}
+
+.carrusel-btn:hover {
+  background: rgba(0, 0, 0, .7);
+}
+
+/* Indicadores */
+.carrusel-indicadores {
   text-align: center;
-  background: none;
-  border: 0;
+  margin-top: 8px;
 }
 
-.carousel-control-prev {
-  left: 0;
-  background-image: enable-gradients, linear-gradient(90deg, rgba(black, .25), rgba(black, .001)), null;
-}
-.carousel-control-next {
-  right: 0;
-  background-image: if(enable-gradients, linear-gradient(270deg, rgba(black, .25), rgba(black, .001)), null);
-}
-
-/* Icons for within */
-.carousel-control-prev-icon,
-.carousel-control-next-icon {
+.carrusel-indicadores span {
   display: inline-block;
-  width: carousel-control-icon-width;
-  height: carousel-control-icon-width;
-  background-repeat: no-repeat;
-  background-position: 50%;
-  background-size: 100% 100%;
+  width: 12px;
+  height: 12px;
+  background: #bbb;
+  border-radius: 50%;
+  margin: 5px;
+  cursor: pointer;
 }
 
-/* rtl:options: {
-  "autoRename": true,
-  "stringMap":[ {
-    "name"    : "prev-next",
-    "search"  : "prev",
-    "replace" : "next"
-  } ]
-} */
-.carousel-control-prev-icon {
-  background-image: escape-svg(carousel-control-prev-icon-bg);
-}
-.carousel-control-next-icon {
-  background-image: escape-svg(carousel-control-next-icon-bg);
+.carrusel-indicadores .activo {
+  background: #444;
 }
 
-/* Optional indicator pips/controls
-/* Add a container (such as a list) with the following class and add an item (ideally a focusable control,
-/* like a button) with data-bs-target for each slide your carousel holds.*/
+/* Calendario */
+#calendario-eventos {
+  margin-top: 40px;
+  width: 100%;
+  max-width: 850px;
+}
 
-.carousel-indicators {
-  position: absolute;
-  right: 0;
-  bottom: 0;
-  left: 0;
-  z-index: 2;
-  display: flex;
-  justify-content: center;
-  padding: 0;
-  margin-right: carousel-control-width;
-  margin-bottom: 1rem;
-  margin-left: carousel-control-width;
+table.calendario {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: center;
+}
 
-  [data-bs-target] {
-    box-sizing: content-box;
-    flex: 0 1 auto;
-    width: carousel-indicator-width;
-    height: carousel-indicator-height;
-    padding: 0;
-    margin-right: carousel-indicator-spacer;
-    margin-left: carousel-indicator-spacer;
-    text-indent: -999px;
-    cursor: pointer;
-    background-color: carousel-indicator-active-bg;
-    background-clip: padding-box;
-    border: 0;
-    border-top: carousel-indicator-hit-area-height solid transparent;
-    border-bottom: carousel-indicator-hit-area-height solid transparent;
-    opacity: carousel-indicator-opacity;
-    transition: carousel-indicator-transition;
-  }
+.calendario th {
+  background: #333;
+  color: white;
+  padding: 10px;
+}
 
-  .active {
-    opacity: carousel-indicator-active-opacity;
-  }
+.calendario td {
+  padding: 10px;
+  border: 1px solid #ccc;
+}
+
+.calendario td.evento {
+  background: #ffc107;
+  font-weight: bold;
+  cursor: pointer;
 }
