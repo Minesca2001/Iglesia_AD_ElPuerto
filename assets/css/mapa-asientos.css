@@ -10,11 +10,11 @@
     display: grid;
     grid-template-columns: repeat(10, 1fr);
     grid-gap: 10px;
-    justify-content: center;
+    justify-content:right;
     margin-right: 20px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 650px) {
     .auditorium {
         grid-template-columns: repeat(5, 40px);
     }
@@ -48,7 +48,7 @@
 #seat-count span {
     justify-content: center;
     font-weight: bold;
-    align: center;
+    align-content: center;
 }
 
 /* Estilos para los botones de control */
