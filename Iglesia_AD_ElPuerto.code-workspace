@@ -1,0 +1,19 @@
+{
+	"folders": [
+		{
+			"path": "."
+		},
+		{
+			"path": "../Project Church/Evangelistic-Guide"
+		},
+		{
+			"path": "../../../Downloads/Guia_Musical"
+		},
+		{
+			"path": "../../../Downloads/Guía_Musical"
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Guia_Musical"
+	}
+}
