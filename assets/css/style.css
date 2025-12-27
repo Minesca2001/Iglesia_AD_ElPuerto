@@ -1,17 +1,17 @@
 /* Color Palette & Typography Variables */
 :root {
-    --primary-color: #004080;
+    --primary-color: #1504a9;
     /* Deep Blue */
-    --secondary-color: #F0F4F8;
+    --secondary-color: #ffffff;
     /* Light Grey Blue */
-    --accent-color: #CCA300;
+    --accent-color: #ffcc00;
     /* Gold/Bronze */
     --text-color: #333333;
     /* Dark Grey */
     --light-text-color: #f8f8f8;
     /* Off-white for dark backgrounds */
     --border-color: #e0e6ed;
-    /* Lighter border */
+    /* Lighter border 
     --shadow-color: rgba(0, 0, 0, 0.08);
     /* Soft shadow */
     --hover-link-color: #0066CC;
@@ -25,8 +25,8 @@ body {
     font-family: var(--font-body);
     margin: 0;
     padding: 0;
-    background-color: var(--shadow-color);
-    color: var(--text-color);
+    /* background-color: var(--shadow-color);
+    color: var(--text-color); */
     line-height: 1.6;
     scroll-behavior: smooth;
     /* Smooth scrolling for anchor links */
@@ -107,7 +107,7 @@ a:hover {
 header {
     background-color: var(--primary-color);
     color: var(--light-text-color);
-    padding: 1rem 0;
+    padding: 1.5rem 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
     position: sticky;
     top: 0;
@@ -265,15 +265,85 @@ main {
 section {
     margin-bottom: 50px;
     padding: 30px;
-    background-color: #fff;
-    /* Ensure section background is white */
+    /*background-color: #fff;
+    /* Ensure section background is white 
     border: 1px solid var(--border-color);
     border-radius: 10px;
-    box-shadow: 0 2px 10px var(--shadow-color);
+    box-shadow: 0 2px 10px var(--shadow-color); */
 }
 
 section:last-child {
     margin-bottom: 0;
+}
+
+.contenedor-genially {
+    width: 100%;
+    max-width: 1250px;
+    /* Evita que se vea gigante en monitores 4K */
+    margin: 20px auto;
+    /* Centra el contenido y da espacio arriba/abajo */
+}
+
+.contenedor-genially iframe {
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    /* Mantiene la proporción perfecta automáticamente */
+    border: none;
+    border-radius: 12px;
+    /* Bordes redondeados para un look moderno */
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+    /* Sombra suave para darle profundidad */
+    display: block;
+}
+
+/* Ajuste opcional para móviles */
+@media (max-width: 600px) {
+    .contenedor-genially {
+        margin: 10px 0;
+    }
+}
+
+/* Contenedor principal para alinear hijos */
+.main-layout {
+    display: flex;
+    flex-direction: row;
+    /* Los pone uno al lado del otro */
+    gap: 20px;
+    /* Espacio entre auditorio y sidebar */
+    align-items: flex-start;
+    padding: 20px;
+}
+
+/* El auditorio toma la mayor parte del espacio */
+.auditorium-container {
+    align-items: center;
+    background: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* El sidebar tiene un ancho fijo o proporcional menor */
+.sidebar-container {
+    flex: 1;
+    min-width: 200px;
+    background: #f4f4f4;
+    padding: 15px;
+    border-radius: 8px;
+    position: sticky;
+    /* Opcional: para que te siga al hacer scroll */
+    top: 20px;
+}
+
+/* Responsive: si la pantalla es pequeña, se ponen uno abajo del otro */
+@media (max-width: 768px) {
+    .main-layout {
+        flex-direction: column;
+    }
+
+    .sidebar-container {
+        width: 100%;
+    }
 }
 
 h2 {
@@ -324,6 +394,7 @@ h4 {
 p {
     margin-bottom: 15px;
     line-height: 1.7em;
+    text-align: center;
 }
 
 ul {
@@ -515,10 +586,10 @@ ul li::before {
 .content-block {
     padding: 25px;
     background-color: var(--secondary-color);
-    border: 1px solid var(--border-color);
+    /* border: 1px solid var(--border-color); */
     border-radius: 8px;
     margin-bottom: 25px;
-    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05);
+    /*  box-shadow: 0 1px 5px rgba(0, 0, 0, 0.05); */
 }
 
 /* Esta linea de codigo es para prueba de un diseno */

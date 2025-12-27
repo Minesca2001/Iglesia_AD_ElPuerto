@@ -1,7 +1,9 @@
 <section id="mapa-asientos">
     <!-- Encabezado -->
     <div class="content-block intro-block">
-        <h1>Mapa Interactivo de Asignación de Asientos</h1>
+        <div class="ministry-grid">
+            <h1>Mapa Interactivo de Asignación de Asientos</h1>
+        </div>
     </div>
     <!-- Botón de personalización -->
     <button class="customization-button" id="toggle-panel">⚙</button>
@@ -36,58 +38,60 @@
             <button class="btn btn-danger w-100 mb-2" id="reset-customizations">Restablecer</button>
         </div>
     </div>
-
-    <!-- Barra lateral fija -->
-    <div id="sidebar">
-        <!-- Botón para colapsar/expandir -->
-        <label id="collapse-toggle" class="collapse-btn">
-            <i class="fas fa-tools"></i> <span class="label">Herramientas</span>
-
-            <div class="sidebar-section">
-                <button id="assign-row"><i class="fas fa-arrows-alt-h"></i> <span class="label">Asignar
-                        Fila</span></button>
-                <button id="assign-column"><i class="fas fa-arrows-alt-v"></i> <span class="label">Asignar
-                        Columna</span></button>
-                <button id="create-row"><i class="fas fa-plus" title="Crear Fila"></i> <span class="label">Crear
-                        Fila</span></button>
-                <button id="create-column"><i class="fas fa-plus" title="Crear Columna"></i> <span class="label">Crear
-                        Columna</span></button>
-                <button id="delete-row"><i class="fas fa-trash-alt" title="Eliminar Fila"></i> <span
-                        class="label">Eliminar
-                        Fila</span></button>
-                <button id="delete-column"><i class="fas fa-trash-alt" title="Eliminar Columna"></i> <span
-                        class="label">Eliminar
-                        Columna</span></button>
-            </div>
-            <div class="sidebar-section">
-                <button id="fillRow"><i class="fas fa-fill"></i> <span class="label">Llenar Fila</span></button>
-                <button id="fillColumn"><i class="fas fa-fill"></i> <span class="label">Llenar Columna</span></button>
-            </div>
-            <div class="sidebar-section">
-                <button id="resetSeats"><i class="fas fa-undo"></i> <span class="label">Reiniciar</span></button>
-            </div>
-            <div class="sidebar-section">
-                <button id="exportSeats"><i class="fas fa-download"></i> <span class="label">Exportar</span></button>
-                <button id="importButton"><i class="fas fa-upload"></i> <span class="label">Importar</span></button>
-                <input type="file" id="importSeats" style="display:none;">
-            </div>
-            <div class="sidebar-section">
-                <button id="reserveSeats"><i class="fas fa-lock"></i> <span class="label">Reservar</span></button>
-            </div>
-    </div>
     </div>
 
     <!-- Información de asientos -->
-    <div class="intro-block">
-        <div id="seat-count">
-            <p class="text-center">Asientos ocupados: <span id="occupiedCount">0</span> / Asientos disponibles: <span
-                    id="availableCount">100</span></p>
+    <div class="main-layout">
+
+        <div class="auditorium-container">
+            <div id="seat-count">
+                <p class="text-center">Asientos ocupados: <span id="occupiedCount">0</span> / Asientos disponibles:
+                    <span id="availableCount">100</span>
+                </p>
+                <!-- Auditorio con asientos -->
+                <div id="auditorium"></div>
+            </div>
         </div>
-        <div class="intro-block">
-            <!-- Auditorio con asientos -->
-            <div id="auditorium"></div>
-        </div>
-    </div>
+        <!-- Barra lateral fija -->
+        <aside class="sidebar-container">
+            <div id="sidebar">
+                <!-- Botón para colapsar/expandir -->
+                <label id="collapse-toggle" class="collapse-btn">
+                    <i class="fas fa-tools"></i> <span class="label">Herramientas</span>
+
+                    <div class="sidebar-section">
+                        <button id="assign-row"><i class="fas fa-arrows-alt-h"></i> <span class="label">Asignar
+                                Fila</span></button>
+                        <button id="assign-column"><i class="fas fa-arrows-alt-v"></i> <span class="label">Asignar
+                                Columna</span></button>
+                        <button id="create-row"><i class="fas fa-plus" title="Crear Fila"></i> <span class="label">Crear
+                                Fila</span></button>
+                        <button id="create-column"><i class="fas fa-plus" title="Crear Columna"></i> <span
+                                class="label">Crear
+                                Columna</span></button>
+                        <button id="delete-row"><i class="fas fa-trash-alt" title="Eliminar Fila"></i> <span
+                                class="label">Eliminar
+                                Fila</span></button>
+                        <button id="delete-column"><i class="fas fa-trash-alt" title="Eliminar Columna"></i> <span
+                                class="label">Eliminar
+                                Columna</span></button>
+                        <button id="fillRow"><i class="fas fa-fill"></i> <span class="label">Llenar Fila</span></button>
+                        <button id="fillColumn"><i class="fas fa-fill"></i> <span class="label">Llenar
+                                Columna</span></button>
+                        <button id="resetSeats"><i class="fas fa-undo"></i> <span
+                                class="label">Reiniciar</span></button>
+                        <button id="exportSeats"><i class="fas fa-download"></i> <span
+                                class="label">Exportar</span></button>
+                        <button id="importButton"><i class="fas fa-upload"></i> <span
+                                class="label">Importar</span></button>
+                        <input type="file" id="importSeats" style="display:none;">
+                        <button id="reserveSeats"><i class="fas fa-lock"></i> <span
+                                class="label">Reservar</span></button>
+                    </div>
+                </label>
+            </div>
+        </aside>
+
         <!-- Gestión de usuarios >
         <aside class="user-management">
             <h2>Gestión de Usuarios</h2>
@@ -105,7 +109,7 @@
         </aside-->
     </div>
     <script src="/assets/jss/auditorio.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="/assets/jss/index_2.js"></script>
-    <script src="/assets/jss/Tools_Panel.js"></script>
+    <!--script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script-->
+    <script src="assets/jss/main.js"></script>
+    <!--script src="assets/jss/Tools_Panel.js"></script-->
 </section>

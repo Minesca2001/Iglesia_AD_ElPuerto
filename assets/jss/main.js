@@ -31,11 +31,33 @@ async function loadSection(sectionId) {
 
     try {
         const response = await fetch(`${sectionId}.html`);
-        if (!response.ok) {
+        /* if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
-        }
+        } */
+
+        // ... dentro de loadSection en main.js ...
         const content = await response.text();
         dynamicContentArea.innerHTML = content;
+
+        // NUEVA LÓGICA DE INTEGRACIÓN:
+        if (sectionId === 'mapa-asientos') {
+            // Esperamos un milisegundo para asegurar que el DOM se procesó
+            setTimeout(() => {
+                if (typeof initAuditorio === 'function') {
+                    initAuditorio();
+                } else {
+                    console.error("La función initAuditorio no se encuentra. Revisa auditorio.js")
+                }
+            }, 100);
+        }
+        /*/ ... resto del código ...
+        // Dentro de loadSection, después de dynamicContentArea.innerHTML = content;
+        if (sectionId === 'mapa-asientos') {
+            // Verificamos si la función existe en auditorio.js antes de llamarla
+            if (typeof initMapaAsientos === 'function') {
+                initMapaAsientos();
+            }
+        } */
 
         // Scroll to the top of the loaded content, accounting for sticky header
         const headerHeight = mainHeader ? mainHeader.offsetHeight : 0;
