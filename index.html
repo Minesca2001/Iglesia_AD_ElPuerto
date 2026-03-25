@@ -87,6 +87,58 @@
             </div>
         </div>
     </footer>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
+        import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+
+        const firebaseConfig = {
+            apiKey: "AIzaSyC9FJeG8zvS5vfE1IQJqqJ5k0XYua4MP60",
+            authDomain: "iglesia-web-af46b.firebaseapp.com",
+            databaseURL: "https://iglesia-web-af46b-default-rtdb.firebaseio.com",
+            projectId: "iglesia-web-af46b",
+            storageBucket: "iglesia-web-af46b.firebasestorage.app",
+            messagingSenderId: "146671260938",
+            appId: "1:146671260938:web:8ed62022fd1d08c3fe56f3",
+            measurementId: "G-4KQERH17LR"
+        };
+
+        const app = initializeApp(firebaseConfig);
+        const db = getDatabase(app);
+
+        // Hacer global
+        window.db = db;
+        window.ref = ref;
+        window.push = push;
+    </script>
+    <script>
+        document.querySelectorAll("form").forEach(form => {
+            form.addEventListener("submit", function (e) {
+                e.preventDefault();
+
+                const datos = {};
+                const inputs = form.querySelectorAll("input, textarea, select");
+
+                inputs.forEach(input => {
+                    if (input.name) {
+                        datos[input.name] = input.value;
+                    }
+                });
+
+                // nombre de colección dinámico
+                const nombreFormulario = form.id || "formularios";
+
+                push(ref(db, nombreFormulario), datos)
+                    .then(() => {
+                        alert("Datos enviados correctamente");
+                        form.reset();
+                    })
+                    .catch(error => {
+                        console.error(error);
+                        alert("Error al enviar");
+                    });
+            });
+        });
+    </script>
 
     <script src="assets/jss/auditorio.js"></script>
     <script type="module" src="assets/jss/main.js"></script>
